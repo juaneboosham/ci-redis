@@ -18,4 +18,9 @@ public class Counter {
 
         return String.format("Hello，Redis，这是第%d次访问了",increment);
     }
+
+    @GetMapping("/message")
+    public String getMessage(){
+        return "this is a message!";
+    }
 }
