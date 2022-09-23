@@ -5,9 +5,12 @@ host=$(cat /etc/docker-registry/host)
 LOCAL_TAG=redis-ci
 REMOTE_TAG=$host/$LOCAL_TAG
 ENV=$1
-REMOTE_HOST=$(cat /etc/docker-registry/remotehost)
+PROD_HOST=$(cat /etc/docker-registry/prodhost)
 
 echo ENV
 
-ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $REMOTE_HOST "docker run -p 8088:8088 $REMOTE_TAG"
+ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $RPROD_HOST "docker stop redis-ci;
+                                                                       docker rm redis-ci;
+                                                                       docker pull $REMOTE_TAG;
+                                                                       docker run -d -p 8088:8088 --name redis-ci $REMOTE_TAG;"
 
