@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './gradlew clean test -Dspring.profiles.active=test'
+                sh './gradlew test -Dspring.profiles.active=test'
             }
         }
         stage('GenImage') {
