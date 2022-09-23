@@ -36,11 +36,6 @@ pipeline {
             steps {
                 sh './gradlew clean test -Dspring.profiles.active=test'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
         }
         stage('GenImage') {
           steps {
