@@ -36,4 +36,4 @@ echo ENV
 docker stop redis-ci
 docker rm redis-ci
 docker pull $REMOTE_TAG
-docker run -p 8088:8088 -name redis-ci $REMOTE_TAG
+docker run -p 8088:8088 --name redis-ci $REMOTE_TAG
