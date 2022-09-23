@@ -4,7 +4,7 @@ set -x
 host=$(cat /etc/docker-registry/host)
 #echo $(docker -v)
 
-LOCAL_TAG=localtag
+LOCAL_TAG=redis-ci
 REMOTE_TAG=$host/$LOCAL_TAG
 
 username=$(cat /etc/docker-registry/username)

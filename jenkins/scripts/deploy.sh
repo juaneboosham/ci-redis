@@ -27,7 +27,7 @@
 
 set -x
 host=$(cat /etc/docker-registry/host)
-LOCAL_TAG=localtag
+LOCAL_TAG=redis-ci
 REMOTE_TAG=$host/$LOCAL_TAG
 ENV=$1
 
