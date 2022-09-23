@@ -33,4 +33,4 @@ ENV=$1
 
 echo ENV
 
-docker run $REMOTE_TAG
+docker run -p 8088:8088 $REMOTE_TAG

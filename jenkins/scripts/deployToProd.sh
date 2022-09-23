@@ -9,5 +9,5 @@ REMOTE_HOST=$(cat /etc/docker-registry/remotehost)
 
 echo ENV
 
-ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $REMOTE_HOST "docker run $REMOTE_TAG"
+ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $REMOTE_HOST "docker run -p 8088:8088 $REMOTE_TAG"
 
