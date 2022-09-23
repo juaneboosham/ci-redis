@@ -33,4 +33,7 @@ ENV=$1
 
 echo ENV
 
-docker run -p 8088:8088 $REMOTE_TAG
+docker stop redis-ci
+docker rm redis-ci
+docker pull $REMOTE_TAG
+docker run -p 8088:8088 -name redis-ci $REMOTE_TAG
