@@ -21,6 +21,6 @@ public class Counter {
 
     @GetMapping("/message")
     public String getMessage(){
-        return "this is a message2!";
+        return "this is a message3!";
     }
 }
