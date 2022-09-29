@@ -33,8 +33,12 @@ ENV=$1
 
 echo ENV
 
-docker stop redis-ci
-docker rm redis-ci
+container_id=$(docker ps | grep redis-ci | awk {'print $1'})
+echo $container_id
+if [ "${container_id}" != "" ] ; then
+        docker stop $container_id
+        docker rm $container_id
+fi
 docker pull $REMOTE_TAG
 docker run -d -p 8088:8088 --name redis-ci $REMOTE_TAG
 docker image prune -f
