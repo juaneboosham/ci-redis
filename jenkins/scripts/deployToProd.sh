@@ -11,5 +11,6 @@ echo ENV
 
 ssh -i /etc/firstECC.pem -o "StrictHostKeyChecking no" -t $PROD_HOST "docker images -q redis-ci && docker stop redis-ci && docker rm redis-ci;
                                                                        docker pull $REMOTE_TAG;
-                                                                       docker run -d -p 8088:8088 --name redis-ci $REMOTE_TAG;"
+                                                                       docker run -d -p 8088:8088 --name redis-ci $REMOTE_TAG;
+                                                                       docker image prune -f;"
 

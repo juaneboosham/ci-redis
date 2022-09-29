@@ -1,0 +1,10 @@
+version: '1'
+services:
+  redis-ci:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      image: redis-ci:v1
+      container_name: redis-ci
+      ports:
+         - 8088:8088
